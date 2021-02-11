@@ -1,0 +1,90 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Common */
+body {
+    font-family: "Nerko One", Arial, Helvetica, sans-serif;
+    background-color: #add8e6;
+}
+
+img {
+    width: 100%;
+}
+
+.container {
+    width: 65%;
+    margin: auto;
+}
+
+/* Header */
+header h1 {
+    text-align: center;
+    font-size: 60px;
+    color: white;
+    text-shadow: 5px 5px 5px black;
+}
+
+/* Main */
+.row {
+    text-align: center;
+}
+
+.card {
+    position: relative;
+    width: 20%;
+    /* Sto usando display none sull'immagine quindi mi serve l'altezza */
+    height: 200px;
+    display: inline-block;
+    margin: 10px;
+    overflow: hidden;
+    background-image: url('../img/pattern.png');
+    background-size: contain;
+    background-color: white;
+    padding: 20px 20px 40px 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px black;
+}
+
+.card img {
+    display: none;
+    /* Se non voglio dare altezza fissa alla card uso visibility invece di display none */
+    /* visibility: hidden; */
+}
+
+.card .card-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: orange;
+    font-size: 25px;
+    line-height: 50px;
+    display: none;
+}
+
+.card.active,
+.card:hover {
+    background-image: none;
+    cursor: pointer;
+}
+.card.active img,
+.card:hover img {
+    display: block;
+    /* Se non voglio dare altezza fissa alla card uso visibility invece di display none */
+    /* visibility: visible; */
+}
+.card.active .card-text,
+.card:hover .card-text {
+     display: block;
+}
+
+.card.active .card-text {
+    color: red;
+}
+.card.active:hover .card-text {
+    color: orange;
+}
